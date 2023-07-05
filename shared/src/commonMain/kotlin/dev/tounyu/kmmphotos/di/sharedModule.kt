@@ -7,7 +7,7 @@ import dev.tounyu.kmmphotos.usecase.photo.LoadLocalPhotoUseCase
 import org.koin.dsl.module
 
 
-val appModule = module {
+val sharedModule = module {
     single<LocalPhotoRepository> { LocalPhotoRepositoryImpl() }
     single { AuthLocalPhotoUseCase() }
     single { LoadLocalPhotoUseCase(get()) }

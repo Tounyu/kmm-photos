@@ -55,11 +55,11 @@ actual class LoadLocalPhotoUseCase actual constructor(
 
     private suspend fun requestImage(assets: List<PHAsset>) = suspendCoroutine {
         val images = mutableListOf<UIImage>()
-        assets.forEach {
+        assets.forEach { phAsset ->
             PHImageManager.defaultManager().requestImageDataAndOrientationForAsset(
-                it,
+                phAsset,
                 requestImageOptions
-            ) { nsData: NSData?, s: String?, uInt: CGImagePropertyOrientation, map: Map<Any?, *>? ->
+            ) { nsData: NSData?, _: String?, _: CGImagePropertyOrientation, _: Map<Any?, *>? ->
                 nsData?.let {
                     images.add(UIImage(nsData))
                 }
