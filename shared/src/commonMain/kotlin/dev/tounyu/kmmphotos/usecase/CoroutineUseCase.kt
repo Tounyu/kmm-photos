@@ -1,21 +1,21 @@
 package dev.tounyu.kmmphotos.usecase
 
-import dev.tounyu.kmmphotos.Result
+import dev.tounyu.kmmphotos.KmmResult
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 
 abstract class CoroutineUseCase<P, R>(
     private val dispatcher: CoroutineDispatcher,
 ) {
-    suspend operator fun invoke(param: P): Result<R> {
+    suspend operator fun invoke(param: P): KmmResult<R> {
         return try {
             withContext(dispatcher) {
                 execute(param).let {
-                    Result.Success(it)
+                    KmmResult.Success(it)
                 }
             }
         } catch (t: Throwable) {
-            Result.Error(t)
+            KmmResult.Error(t)
         }
     }
 
