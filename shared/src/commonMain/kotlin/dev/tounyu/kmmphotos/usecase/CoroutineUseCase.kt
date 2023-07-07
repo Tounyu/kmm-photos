@@ -4,7 +4,7 @@ import dev.tounyu.kmmphotos.KmmResult
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 
-abstract class CoroutineUseCase<P, R>(
+abstract class CoroutineUseCase<P, R : Any>(
     private val dispatcher: CoroutineDispatcher,
 ) {
     suspend operator fun invoke(param: P): KmmResult<R> {

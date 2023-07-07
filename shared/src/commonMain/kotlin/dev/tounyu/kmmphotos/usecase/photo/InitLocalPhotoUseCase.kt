@@ -4,7 +4,7 @@ import dev.tounyu.kmmphotos.repository.LocalPhotoRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 
-expect class LoadLocalPhotoUseCase(
+expect class InitLocalPhotoUseCase(
     localPhotoRepository: LocalPhotoRepository,
     dispatcher: CoroutineDispatcher = Dispatchers.Default,
 )

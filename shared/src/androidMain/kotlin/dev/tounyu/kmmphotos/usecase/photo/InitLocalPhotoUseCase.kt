@@ -4,7 +4,7 @@ import dev.tounyu.kmmphotos.repository.LocalPhotoRepository
 import dev.tounyu.kmmphotos.usecase.CoroutineUseCase
 import kotlinx.coroutines.CoroutineDispatcher
 
-actual class LoadLocalPhotoUseCase actual constructor(
+actual class InitLocalPhotoUseCase actual constructor(
     private val localPhotoRepository: LocalPhotoRepository,
     dispatcher: CoroutineDispatcher,
 ) : CoroutineUseCase<Unit, Unit>(dispatcher) {

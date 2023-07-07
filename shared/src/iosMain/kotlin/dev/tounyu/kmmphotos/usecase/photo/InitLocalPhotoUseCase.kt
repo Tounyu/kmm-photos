@@ -18,7 +18,7 @@ import platform.UIKit.UIImage
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 
-actual class LoadLocalPhotoUseCase actual constructor(
+actual class InitLocalPhotoUseCase actual constructor(
     private val localPhotoRepository: LocalPhotoRepository,
     dispatcher: CoroutineDispatcher,
 ) : CoroutineUseCase<Unit, Unit>(dispatcher) {

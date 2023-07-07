@@ -10,10 +10,15 @@ import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 
 actual class AuthLocalPhotoUseCase actual constructor(
+    private val initLocalPhotoUseCase: InitLocalPhotoUseCase,
     dispatcher: CoroutineDispatcher,
 ) : CoroutineUseCase<Unit, Boolean>(dispatcher) {
     override suspend fun execute(param: Unit): Boolean {
-        return requestAuthorization()
+        val isAuthorized = requestAuthorization()
+        if (isAuthorized) {
+            initLocalPhotoUseCase(Unit)
+        }
+        return isAuthorized
     }
 
     private suspend fun requestAuthorization() = suspendCoroutine {

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,11 @@
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
+		AD5E9C392A58AB81008EB919 /* KoinHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5E9C382A58AB81008EB919 /* KoinHelper.swift */; };
+		AD5E9C3C2A58AE39008EB919 /* PhotoListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5E9C3B2A58AE39008EB919 /* PhotoListFeature.swift */; };
+		AD5E9C3F2A58AF42008EB919 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = AD5E9C3E2A58AF42008EB919 /* ComposableArchitecture */; };
+		AD5E9C412A58B399008EB919 /* ResultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5E9C402A58B399008EB919 /* ResultHelper.swift */; };
+		AD5E9C432A58BC71008EB919 /* PhotoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5E9C422A58BC71008EB919 /* PhotoListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +38,10 @@
 		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD5E9C382A58AB81008EB919 /* KoinHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoinHelper.swift; sourceTree = "<group>"; };
+		AD5E9C3B2A58AE39008EB919 /* PhotoListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListFeature.swift; sourceTree = "<group>"; };
+		AD5E9C402A58B399008EB919 /* ResultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultHelper.swift; sourceTree = "<group>"; };
+		AD5E9C422A58BC71008EB919 /* PhotoListView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = PhotoListView.swift; sourceTree = "<group>"; tabWidth = 2; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD5E9C3F2A58AF42008EB919 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,11 +84,14 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
+				AD5E9C3A2A58ADF9008EB919 /* PhotoListView */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
 				7555FF82242A565900829871 /* ContentView.swift */,
 				7555FF8C242A565B00829871 /* Info.plist */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
 				058557D7273AAEEB004C7B11 /* Preview Content */,
+				AD5E9C382A58AB81008EB919 /* KoinHelper.swift */,
+				AD5E9C402A58B399008EB919 /* ResultHelper.swift */,
 			);
 			path = iosApp;
 			sourceTree = "<group>";
@@ -88,6 +101,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AD5E9C3A2A58ADF9008EB919 /* PhotoListView */ = {
+			isa = PBXGroup;
+			children = (
+				AD5E9C3B2A58AE39008EB919 /* PhotoListFeature.swift */,
+				AD5E9C422A58BC71008EB919 /* PhotoListView.swift */,
+			);
+			path = PhotoListView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,6 +130,9 @@
 			dependencies = (
 			);
 			name = iosApp;
+			packageProductDependencies = (
+				AD5E9C3E2A58AF42008EB919 /* ComposableArchitecture */,
+			);
 			productName = iosApp;
 			productReference = 7555FF7B242A565900829871 /* iosApp.app */;
 			productType = "com.apple.product-type.application";
@@ -120,7 +145,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1130;
-				ORGANIZATIONNAME = orgName;
+				ORGANIZATIONNAME = tounyu.dev;
 				TargetAttributes = {
 					7555FF7A242A565900829871 = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -136,6 +161,9 @@
 				Base,
 			);
 			mainGroup = 7555FF72242A565900829871;
+			packageReferences = (
+				AD5E9C3D2A58AF42008EB919 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 7555FF7C242A565900829871 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -182,8 +210,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD5E9C412A58B399008EB919 /* ResultHelper.swift in Sources */,
+				AD5E9C392A58AB81008EB919 /* KoinHelper.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
+				AD5E9C3C2A58AE39008EB919 /* PhotoListFeature.swift in Sources */,
+				AD5E9C432A58BC71008EB919 /* PhotoListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +416,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AD5E9C3D2A58AF42008EB919 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.55.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AD5E9C3E2A58AF42008EB919 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD5E9C3D2A58AF42008EB919 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7555FF73242A565900829871 /* Project object */;
 }

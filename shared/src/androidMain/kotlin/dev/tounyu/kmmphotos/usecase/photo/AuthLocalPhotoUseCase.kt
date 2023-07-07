@@ -4,6 +4,7 @@ import dev.tounyu.kmmphotos.usecase.CoroutineUseCase
 import kotlinx.coroutines.CoroutineDispatcher
 
 actual class AuthLocalPhotoUseCase actual constructor(
+    private val initLocalPhotoUseCase: InitLocalPhotoUseCase,
     dispatcher: CoroutineDispatcher
 ) : CoroutineUseCase<Unit, Boolean>(dispatcher) {
 

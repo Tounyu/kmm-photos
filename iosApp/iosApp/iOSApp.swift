@@ -1,16 +1,19 @@
 import SwiftUI
+import ComposableArchitecture
 import shared
 
 @main
 struct iOSApp: App {
 
     init() {
-        KoinHelperKt.doInitKoin()
+        startKoin()
     }
 
 	var body: some Scene {
 		WindowGroup {
-			ContentView()
+			PhotoListView(store: Store(initialState: PhotoListFeature.State()) {
+                PhotoListFeature()
+              })
 		}
 	}
 }

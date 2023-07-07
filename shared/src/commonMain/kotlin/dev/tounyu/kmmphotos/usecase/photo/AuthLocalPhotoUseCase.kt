@@ -5,5 +5,6 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 
 expect class AuthLocalPhotoUseCase(
+    initLocalPhotoUseCase: InitLocalPhotoUseCase,
     dispatcher: CoroutineDispatcher = Dispatchers.Default,
 ) : CoroutineUseCase<Unit, Boolean>
